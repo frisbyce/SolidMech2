@@ -326,3 +326,126 @@ mdb.jobs['CF_frequency']._Message(JOB_ABORTED, {
 # Save by frisbyce on 2023_11_16-17.02.32; build 2023 2022_09_28-14.11.55 183150
 # Save by frisbyce on 2023_11_16-17.02.33; build 2023 2022_09_28-14.11.55 183150
 # Save by frisbyce on 2023_11_16-17.02.33; build 2023 2022_09_28-14.11.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].materials['Composite'].Density(table=((1900.0, ), ))
+mdb.models['Model-1'].steps['Step-2'].suppress()
+mdb.models['Model-1'].steps['Step-2'].resume()
+mdb.models['Model-1'].steps['Step-2'].suppress()
+mdb.jobs['Compression'].submit(consistencyChecking=OFF)
+mdb.jobs['Compression']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': '617-0116', 'handle': 0, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\temp\\Compression.odb', 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': '617-0116', 'handle': 30808, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Compression', 'memory': 51.0})
+mdb.jobs['Compression']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 32494.0, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(MINIMUM_MEMORY, {'minimum_memory': 22.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Compression', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Compression']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(JOB_COMPLETED, {
+    'time': 'Thu Nov 16 18:26:37 2023', 'jobName': 'Compression'})
+mdb.models['Model-1'].steps['Step-2'].resume()
+mdb.jobs['CF_frequency'].submit(consistencyChecking=OFF)
+mdb.jobs['CF_frequency']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': '617-0116', 'handle': 0, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': 'test', 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\temp\\CF_frequency.odb', 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': '617-0116', 'handle': 13112, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'CF_frequency', 'memory': 100.0})
+mdb.jobs['CF_frequency']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 32494.0, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(MINIMUM_MEMORY, {'minimum_memory': 22.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'CF_frequency', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['CF_frequency']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 2, 
+    'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 1, 'frame': 0, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'CF_frequency', 'memory': 101.0})
+mdb.jobs['CF_frequency']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 32494.0, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(MINIMUM_MEMORY, {'minimum_memory': 23.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 1, 'frame': 1, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 1, 'frame': 2, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 1, 'frame': 3, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 1, 'frame': 4, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 1, 'frame': 5, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 1, 'frame': 6, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 1, 'frame': 7, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 1, 'frame': 8, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 1, 'frame': 9, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 1, 'frame': 10, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1e-36, 'increment': 1, 'stepTime': 1e-36, 'step': 2, 
+    'jobName': 'CF_frequency', 'severe': 0, 'iterations': 0, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['CF_frequency']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 2, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(JOB_COMPLETED, {
+    'time': 'Thu Nov 16 18:28:08 2023', 'jobName': 'CF_frequency'})
+# Save by frisbyce on 2023_11_16-18.33.44; build 2023 2022_09_28-14.11.55 183150
+# Save by frisbyce on 2023_11_16-18.33.46; build 2023 2022_09_28-14.11.55 183150
+# Save by frisbyce on 2023_11_16-18.33.46; build 2023 2022_09_28-14.11.55 183150
+# Save by frisbyce on 2023_11_16-18.33.46; build 2023 2022_09_28-14.11.55 183150
+# Save by frisbyce on 2023_11_16-18.33.46; build 2023 2022_09_28-14.11.55 183150
