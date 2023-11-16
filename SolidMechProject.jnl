@@ -1,0 +1,81 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 0.0), point1=(0.0, 100.0))
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='Shell', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Shell'].BaseShellExtrude(depth=20.0, sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].parts['Shell'].features['Shell extrude-1'].setValues(
+    depth=1000.0)
+mdb.models['Model-1'].parts['Shell'].regenerate()
+mdb.models['Model-1'].parts['Shell'].regenerate()
+mdb.models['Model-1'].parts['Shell'].regenerate()
+mdb.models['Model-1'].Material(name='Composite')
+mdb.models['Model-1'].materials['Composite'].Elastic(table=((142200000000.0, 
+    9200000000.0, 9200000000.0, 0.33, 0.33, 0.4, 4800000000.0, 4800000000.0, 
+    1200000000.0), ), type=ENGINEERING_CONSTANTS)
+mdb.models['Model-1'].parts['Shell'].Surface(name='Surf-1', side1Faces=
+    mdb.models['Model-1'].parts['Shell'].faces.getSequenceFromMask(('[#1 ]', ), 
+    ))
+mdb.models['Model-1'].parts['Shell'].Set(edges=
+    mdb.models['Model-1'].parts['Shell'].edges.getSequenceFromMask(('[#1 ]', ), 
+    ), name='Set-1')
+mdb.models['Model-1'].parts['Shell'].CompositeLayup(description='', 
+    elementType=SHELL, name='CompositeLayup-1', offsetType=MIDDLE_SURFACE, 
+    symmetric=True, thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Shell'].compositeLayups['CompositeLayup-1'].Section(
+    integrationRule=SIMPSON, poissonDefinition=DEFAULT, preIntegrate=OFF, 
+    temperature=GRADIENT, thicknessType=UNIFORM, useDensity=OFF)
+mdb.models['Model-1'].parts['Shell'].compositeLayups['CompositeLayup-1'].suppress(
+    )
+mdb.models['Model-1'].parts['Shell'].compositeLayups['CompositeLayup-1'].CompositePly(
+    additionalRotationField='', additionalRotationType=ROTATION_NONE, angle=0.0
+    , axis=AXIS_3, material='Composite', numIntPoints=3, orientationType=
+    SPECIFY_ORIENT, orientationValue=0.0, plyName='Ply-1', region=Region(
+    faces=mdb.models['Model-1'].parts['Shell'].faces.getSequenceFromMask(mask=(
+    '[#1 ]', ), )), suppressed=False, thickness=0.005, thicknessType=
+    SPECIFY_THICKNESS)
+mdb.models['Model-1'].parts['Shell'].compositeLayups['CompositeLayup-1'].CompositePly(
+    additionalRotationField='', additionalRotationType=ROTATION_NONE, angle=0.0
+    , axis=AXIS_3, material='Composite', numIntPoints=3, orientationType=
+    SPECIFY_ORIENT, orientationValue=45.0, plyName='Ply-2', region=Region(
+    faces=mdb.models['Model-1'].parts['Shell'].faces.getSequenceFromMask(mask=(
+    '[#1 ]', ), )), suppressed=False, thickness=0.005, thicknessType=
+    SPECIFY_THICKNESS)
+mdb.models['Model-1'].parts['Shell'].compositeLayups['CompositeLayup-1'].CompositePly(
+    additionalRotationField='', additionalRotationType=ROTATION_NONE, angle=0.0
+    , axis=AXIS_3, material='Composite', numIntPoints=3, orientationType=
+    SPECIFY_ORIENT, orientationValue=-45.0, plyName='Ply-3', region=Region(
+    faces=mdb.models['Model-1'].parts['Shell'].faces.getSequenceFromMask(mask=(
+    '[#1 ]', ), )), suppressed=False, thickness=0.005, thicknessType=
+    SPECIFY_THICKNESS)
+mdb.models['Model-1'].parts['Shell'].compositeLayups['CompositeLayup-1'].resume(
+    )
+mdb.models['Model-1'].parts['Shell'].compositeLayups['CompositeLayup-1'].ReferenceOrientation(
+    additionalRotationField='', additionalRotationType=ROTATION_NONE, angle=0.0
+    , axis=AXIS_3, flipNormalDirection=False, flipPrimaryDirection=False, 
+    localCsys=None, normalAxisDefinition=SURFACE, normalAxisDirection=AXIS_3, 
+    normalAxisRegion=mdb.models['Model-1'].parts['Shell'].surfaces['Surf-1'], 
+    orientationType=DISCRETE, primaryAxisDefinition=EDGE, primaryAxisDirection=
+    AXIS_1, primaryAxisRegion=
+    mdb.models['Model-1'].parts['Shell'].sets['Set-1'], stackDirection=STACK_3)
+mdb.models['Model-1'].parts['Shell'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=20.0)
+mdb.models['Model-1'].parts['Shell'].generateMesh()
+# Save by frisbyce on 2023_10_17-07.48.23; build 2023 2022_09_28-14.11.55 183150
+# Save by frisbyce on 2023_10_17-07.48.28; build 2023 2022_09_28-14.11.55 183150
