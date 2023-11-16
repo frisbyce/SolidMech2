@@ -157,3 +157,172 @@ mdb.jobs['Compression']._Message(COMPLETED, {'phase': STANDARD_PHASE,
 mdb.jobs['Compression']._Message(JOB_COMPLETED, {
     'time': 'Thu Oct 19 07:16:18 2023', 'jobName': 'Compression'})
 # Save by frisbyce on 2023_10_19-07.20.09; build 2023 2022_09_28-14.11.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].FrequencyStep(description='test2', name='Step-2', 
+    numEigen=10, previous='Step-1')
+mdb.Job(atTime=None, contactPrint=OFF, description='test', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='CF_frequency', nodalOutputPrecision=
+    SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=1, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.jobs['CF_frequency'].submit(consistencyChecking=OFF)
+mdb.jobs['CF_frequency']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': '617-0116', 'handle': 0, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': 'test', 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'THERE ARE NO ELEMENTS WITH MASS MATRICES IN THE MODEL. THE FREQUENCY EXTRACTION CANNOT BE DONE. IF THIS IS A RESTART JOB, MAKE SURE THAT THE OLD JOB CONTAINS "*RESTART, WRITE"', 
+    'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'IN THIS TYPE OF ANALYSIS ONE WOULD NORMALLY EXPECT THAT A DENSITY FOR MATERIAL COMPOSITE WOULD BE DEFINED.', 
+    'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'THERE ARE NO SOURCES OF INERTIA IN THIS MODEL. IT IS NECESSARY TO DEFINE A MATERIAL DENSITY OR LUMPED MASS OR INPUT THE MASS MATRIX FOR A PART OF THE MODEL USING THE MATRIX INPUT CAPABILITY FOR DYNAMIC ANALYSIS OR FOR GRAVITY LOADS.', 
+    'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\temp\\CF_frequency.odb', 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  CF_frequency.dat file for possible error messages if the file exists.', 
+    'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  CF_frequency.dat file for possible error messages if the file exists.', 
+    'jobName': 'CF_frequency'})
+del mdb.models['Model-1'].steps['Step-2']
+mdb.jobs['Compression'].submit(consistencyChecking=OFF)
+mdb.jobs['Compression']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': '617-0116', 'handle': 0, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\temp\\Compression.odb', 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': '617-0116', 'handle': 35168, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Compression', 'memory': 51.0})
+mdb.jobs['Compression']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 32494.0, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(MINIMUM_MEMORY, {'minimum_memory': 22.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Compression', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Compression']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(JOB_COMPLETED, {
+    'time': 'Thu Nov 16 16:49:59 2023', 'jobName': 'Compression'})
+mdb.models['Model-1'].FrequencyStep(description='test', name='Step-2', 
+    numEigen=10, previous='Step-1')
+mdb.jobs['Compression'].submit(consistencyChecking=OFF)
+mdb.jobs['Compression']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': '617-0116', 'handle': 0, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'THERE ARE NO ELEMENTS WITH MASS MATRICES IN THE MODEL. THE FREQUENCY EXTRACTION CANNOT BE DONE. IF THIS IS A RESTART JOB, MAKE SURE THAT THE OLD JOB CONTAINS "*RESTART, WRITE"', 
+    'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'IN THIS TYPE OF ANALYSIS ONE WOULD NORMALLY EXPECT THAT A DENSITY FOR MATERIAL COMPOSITE WOULD BE DEFINED.', 
+    'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'THERE ARE NO SOURCES OF INERTIA IN THIS MODEL. IT IS NECESSARY TO DEFINE A MATERIAL DENSITY OR LUMPED MASS OR INPUT THE MASS MATRIX FOR A PART OF THE MODEL USING THE MATRIX INPUT CAPABILITY FOR DYNAMIC ANALYSIS OR FOR GRAVITY LOADS.', 
+    'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\temp\\Compression.odb', 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Compression.dat file for possible error messages if the file exists.', 
+    'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Compression.dat file for possible error messages if the file exists.', 
+    'jobName': 'Compression'})
+del mdb.models['Model-1'].steps['Step-2']
+mdb.models['Model-1'].loads['Load-1'].setValues(directionVector=((0.0, 0.0, 
+    0.0), (0.0, -1.0, 0.0)), traction=GENERAL)
+del mdb.models['Model-1'].boundaryConditions['BC-2']
+mdb.jobs['Compression'].submit(consistencyChecking=OFF)
+mdb.jobs['Compression']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': '617-0116', 'handle': 0, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\temp\\Compression.odb', 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': '617-0116', 'handle': 28848, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Compression', 'memory': 51.0})
+mdb.jobs['Compression']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 32494.0, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(MINIMUM_MEMORY, {'minimum_memory': 22.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Compression', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Compression']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Compression'})
+mdb.jobs['Compression']._Message(JOB_COMPLETED, {
+    'time': 'Thu Nov 16 16:56:30 2023', 'jobName': 'Compression'})
+mdb.models['Model-1'].FrequencyStep(name='Step-2', numEigen=10, previous=
+    'Step-1')
+mdb.jobs['CF_frequency'].submit(consistencyChecking=OFF)
+mdb.jobs['CF_frequency']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': '617-0116', 'handle': 0, 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': 'test', 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'THERE ARE NO ELEMENTS WITH MASS MATRICES IN THE MODEL. THE FREQUENCY EXTRACTION CANNOT BE DONE. IF THIS IS A RESTART JOB, MAKE SURE THAT THE OLD JOB CONTAINS "*RESTART, WRITE"', 
+    'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'IN THIS TYPE OF ANALYSIS ONE WOULD NORMALLY EXPECT THAT A DENSITY FOR MATERIAL COMPOSITE WOULD BE DEFINED.', 
+    'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'THERE ARE NO SOURCES OF INERTIA IN THIS MODEL. IT IS NECESSARY TO DEFINE A MATERIAL DENSITY OR LUMPED MASS OR INPUT THE MASS MATRIX FOR A PART OF THE MODEL USING THE MATRIX INPUT CAPABILITY FOR DYNAMIC ANALYSIS OR FOR GRAVITY LOADS.', 
+    'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\temp\\CF_frequency.odb', 'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  CF_frequency.dat file for possible error messages if the file exists.', 
+    'jobName': 'CF_frequency'})
+mdb.jobs['CF_frequency']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  CF_frequency.dat file for possible error messages if the file exists.', 
+    'jobName': 'CF_frequency'})
+# Save by frisbyce on 2023_11_16-17.02.32; build 2023 2022_09_28-14.11.55 183150
+# Save by frisbyce on 2023_11_16-17.02.33; build 2023 2022_09_28-14.11.55 183150
+# Save by frisbyce on 2023_11_16-17.02.33; build 2023 2022_09_28-14.11.55 183150
